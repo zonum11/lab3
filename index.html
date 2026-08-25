@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Store Checkout System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <h1>MINI STORE CHECKOUT SYSTEM</h1>
+
+        <form id="checkoutForm">
+
+            <section class="card">
+
+                <label for="customerName">Customer Name</label>
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter customer name"
+                >
+
+                <label for="productCount">Number of Products</label>
+                <input
+                    type="number"
+                    id="productCount"
+                    min="1"
+                    placeholder="Enter number of products"
+                >
+
+            </section>
+
+            <section id="productsContainer" class="card">
+            </section>
+
+            <section class="card">
+
+                <label for="deliveryOption">Delivery Option</label>
+
+                <select id="deliveryOption">
+                    <option value="1">1 - Store Pickup (₱0)</option>
+                    <option value="2">2 - Standard Delivery (₱80)</option>
+                    <option value="3">3 - Express Delivery (₱150)</option>
+                </select>
+
+                <button id="calculateBtn" type="button">
+                    Calculate Order
+                </button>
+
+            </section>
+
+            <div id="validationMessage" class="validation">
+            </div>
+
+            <section id="orderSummary" class="card summary">
+            </section>
+
+        </form>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
