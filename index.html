@@ -29,6 +29,7 @@
                     type="number"
                     id="productCount"
                     min="1"
+                    step="1"
                     placeholder="Enter number of products"
                 >
 
@@ -42,12 +43,22 @@
                 <label for="deliveryOption">Delivery Option</label>
 
                 <select id="deliveryOption">
-                    <option value="1">1 - Store Pickup (₱0)</option>
-                    <option value="2">2 - Standard Delivery (₱80)</option>
-                    <option value="3">3 - Express Delivery (₱150)</option>
+                    <option value="1">
+                        1 - Store Pickup (₱0)
+                    </option>
+
+                    <option value="2">
+                        2 - Standard Delivery (₱80)
+                    </option>
+
+                    <option value="3">
+                        3 - Express Delivery (₱150)
+                    </option>
                 </select>
 
-                <button id="calculateBtn" type="button">
+                <button
+                    id="calculateBtn"
+                    type="button">
                     Calculate Order
                 </button>
 
