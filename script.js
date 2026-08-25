@@ -54,7 +54,7 @@ function generateProductFields() {
 
   productsContainer.innerHTML = "";
 
-  if (!Number.isFinite(productCount) || productCount <= 0) {
+  if (!Number.isInteger(productCount) || productCount <= 0) {
     return;
   }
 
@@ -112,7 +112,7 @@ function handleCalculateOrder() {
     return;
   }
 
-  if (!Number.isFinite(productCount) || productCount <= 0) {
+  if (!Number.isInteger(productCount) || productCount <= 0) {
     validationMessage.textContent =
       "Please enter a valid number of products.";
     return;
@@ -248,8 +248,6 @@ function handleCalculateOrder() {
     `Final Amount: ₱${formatCurrency(finalAmount)}`;
 }
 
-
-// Browser code
 if (typeof document !== "undefined") {
   const productCount =
     document.getElementById("productCount");
@@ -257,7 +255,7 @@ if (typeof document !== "undefined") {
   const calculateBtn =
     document.getElementById("calculateBtn");
 
-  if (productCount) {
+  if (productCount && calculateBtn) {
     productCount.addEventListener(
       "input",
       generateProductFields
@@ -267,9 +265,7 @@ if (typeof document !== "undefined") {
       "change",
       generateProductFields
     );
-  }
 
-  if (calculateBtn) {
     calculateBtn.addEventListener(
       "click",
       handleCalculateOrder
@@ -277,8 +273,6 @@ if (typeof document !== "undefined") {
   }
 }
 
-
-// Node.js support for the autograder
 if (typeof module !== "undefined" && module.exports) {
   module.exports = {
     calculateItemAmount,
